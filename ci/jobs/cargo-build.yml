@@ -121,7 +121,7 @@ jobs:
     enabled: ${{ ne(parameters['profile'], '') }}
     displayName: "[cli flag modify]Set profile ('${{ parameters['profile'] }}') to build the selected target for"
 
-  - bash: echo "##vso[task.setvariable variable=check_flags]$(check_flags) --features ${{ parameters['features'] }}"
+  - bash: echo "##vso[task.setvariable variable=check_flags]$(check_flags) --features '${{ parameters['features'] }}'"
     enabled: ${{ ne(parameters['features'], '') }}
     displayName: "[cli flag modify]Space-separated list of features to activate: ${{ parameters['features'] }}"
 
