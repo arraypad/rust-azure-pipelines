@@ -173,6 +173,8 @@ jobs:
   # Final run
   - bash: cargo build $(check_flags)
     displayName: Run cargo build with defined flags 
+    env:
+      MACOSX_DEPLOYMENT_TARGET: "10.8"
 
   # Custom steps:
   - ${{ if parameters['job_post-steps'] }}:
